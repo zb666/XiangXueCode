@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.connection.RedisServer;
 import org.springframework.data.redis.connection.jedis.JedisUtils;
 import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.BoundListOperations;
@@ -27,15 +28,12 @@ public class TestRedis {
 
     @Test
     public void testRedis(){
-
         String orderKey1 = "order:1";
         String orderKey2 = "order:2";
         String orderKey3 = "order:3";
-
         HashOperations<String, String, String> stringObjectObjectHashOperations = stringRedisTemplate.opsForHash();
 //        stringObjectObjectHashOperations.put("user:1:order","orderId","1");
 //        stringObjectObjectHashOperations.put("user:1:order","money","36");
-
         //用户订单的操作
         Map<String,String> userMap = new HashMap<>();
         userMap.put("orderId","1");
@@ -53,6 +51,8 @@ public class TestRedis {
         user4Order.put("money","40");
         user4Order.put("time","2018");
 
+        BoundHashOperations<String, Object, Object> operations = stringRedisTemplate.boundHashOps("order:4:user");
+
         //追加order:4 放入队列的第一个位置
         BoundListOperations<String, String> orderList4 = stringRedisTemplate.boundListOps("user:1:order:list");
         orderList4.leftPush("order:4");
@@ -60,8 +60,6 @@ public class TestRedis {
         BoundListOperations<String, String> userListTest = stringRedisTemplate.boundListOps("user:1:order:list");
         //查询用户的所有订单
         List<String> range = userListTest.range(0, -1);
-
     }
-
 
 }

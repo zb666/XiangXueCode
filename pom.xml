@@ -10,6 +10,10 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>RedisXX</module>
+        <module>DubboXX</module>
+        <module>Nacos</module>
+        <module>Boot_Shiro</module>
+        <module>CodeDesign</module>
     </modules>
 
     <parent>

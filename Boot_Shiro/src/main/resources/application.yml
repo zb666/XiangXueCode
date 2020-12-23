@@ -1,0 +1,16 @@
+# 数据库连接信息
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/bob1?useUnicode=true&useSSL=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  # 关闭 thymeleaf缓存
+  thymeleaf:
+    cache: false
+# MyBatis相关
+mybatis:
+  # mapper文件路径
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  # 别名
+  type-aliases-package: com.molu.pojo
