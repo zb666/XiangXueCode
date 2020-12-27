@@ -6,15 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="DubboXX" />
-        <module name="Boot_Shiro" />
         <module name="CodeDesign" />
+        <module name="DubboXX" />
+        <module name="Quartz" />
+        <module name="FeignAli" />
         <module name="RedisXX" />
+        <module name="Spring-MyBatis" />
         <module name="Nacos" />
+        <module name="Task" />
+        <module name="Boot_Shiro" />
+        <module name="springboot-quartz" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Dubbo_Consumer" target="1.8" />
+      <module name="Quartz" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -23,9 +29,14 @@
       <module name="CodeDesign" options="-parameters" />
       <module name="DubboXX" options="-parameters" />
       <module name="Dubbo_Consumer" options="-parameters" />
+      <module name="FeignAli" options="-parameters" />
       <module name="Nacos" options="-parameters" />
+      <module name="Quartz" options="-parameters" />
       <module name="RedisXX" options="-parameters" />
+      <module name="Spring-MyBatis" options="-parameters" />
+      <module name="Task" options="-parameters" />
       <module name="XiangXueCode" options="-parameters" />
+      <module name="springboot-quartz" options="-parameters" />
     </option>
   </component>
 </project>
